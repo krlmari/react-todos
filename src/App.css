@@ -1,1 +1,22 @@
+canvas {
+    margin-top: 40px;
+}
 
+.status {
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+    margin-top: 80px;
+}
+
+@media screen and (max-width: 320px) {
+    .cards {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}
