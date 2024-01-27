@@ -20,7 +20,7 @@ function App() {
 
             if (data) {
                 setData(sortedGroups(groupedUsers(data)));
-                !error && setError(false);
+                setError(false);
             }
         } catch (err) {
             setError(true);
