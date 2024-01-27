@@ -76,8 +76,8 @@ function App() {
 
                 {!loading && !error && (
                     <section className="cards">
-                        {data.map((card, index) => (
-                            <Card key={card.userId} {...card} name={`${index + 1}`} />
+                        {data.map((card) => (
+                            <Card key={card.userId} {...card} name={card.userId} />
                         ))}
                     </section>
                 )}
