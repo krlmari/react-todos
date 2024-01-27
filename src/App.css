@@ -1,7 +1,3 @@
-canvas {
-    margin-top: 40px;
-}
-
 .status {
     display: block;
     margin: 20px auto;
@@ -12,7 +8,11 @@ canvas {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 20px;
-    margin-top: 80px;
+    margin-top: 50px;
+}
+
+canvas {
+    margin-top: 40px;
 }
 
 @media screen and (max-width: 320px) {

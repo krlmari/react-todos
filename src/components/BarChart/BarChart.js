@@ -1,4 +1,5 @@
 import React from 'react';
+import './BarChart.css';
 import Chart from 'chart.js/auto';
 import { CategoryScale } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
@@ -9,7 +10,8 @@ export const options = {
     plugins: {
         title: {
             display: true,
-            text: 'График'
+            text: 'Гистограмма',
+            color: 'black'
         }
     },
     responsive: true,

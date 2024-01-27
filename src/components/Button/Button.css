@@ -2,11 +2,11 @@ button {
     position: relative;
     font-size: 16px;
     padding: 13px 20px 13px;
-    border: 1px solid black;
+    border: 1px solid rgb(226, 222, 222);
     cursor: pointer;
     border-radius: 8px;
     user-select: none;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
     background-color: white;
     transition: color linear 0.3s, border-color linear 0.3s;
 }
