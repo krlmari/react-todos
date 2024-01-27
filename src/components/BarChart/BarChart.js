@@ -42,7 +42,7 @@ function BarChart(props) {
         ]
     };
 
-    return <Bar data={chartData} options={options} />;
+    return <Bar data={chartData} options={options} className="chart" />;
 }
 
 export default BarChart;
