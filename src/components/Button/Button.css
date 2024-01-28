@@ -8,11 +8,10 @@ button {
     user-select: none;
     box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
     background-color: white;
-    transition: color linear 0.3s, border-color linear 0.3s;
+    transition: color linear 0.3s;
 }
 
 button[disabled] {
     color: gray;
-    border-color: gray;
     cursor: default;
 }
