@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { getTodos } from '../lib/api';
 import { groupUsersWithCount, sortUsersGroups } from '../helpers/users';
-
-const delay = () => new Promise((r) => setTimeout(r, 500));
+import { delay } from '../helpers/index';
 
 export const useFetchUsers = () => {
     const [data, setData] = useState([]);
@@ -14,7 +13,7 @@ export const useFetchUsers = () => {
         error && setError(false);
 
         try {
-            await delay();
+            await delay(500);
             const { data } = await getTodos();
 
             if (data) {
