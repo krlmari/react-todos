@@ -6,9 +6,9 @@ function Card(props) {
         <article className="card">
             <div className="cardHeader">
                 <h2>Пользователь {props.name}</h2>
-                <div className="cardCompleted">
+                <p className="cardCompleted">
                     <span>{props.completedTrue}</span> / <span>{props.completedFalse}</span>
-                </div>
+                </p>
             </div>
 
             <ul className="cardList">

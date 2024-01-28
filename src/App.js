@@ -1,33 +1,13 @@
 import './App.css';
-import React, { useState } from 'react';
+import React from 'react';
 import Button from './components/Button/Button';
 import Card from './components/Card/Card';
 import Preloader from './components/Preloader/Preloader';
 import BarChart from './components/BarChart/BarChart';
-import getTodos from './lib/api';
-import { groupedUsers, sortedGroups } from './helpers/users';
+import { useFetchUsers } from './hooks/useFetchUsers';
 
 function App() {
-    const [data, setData] = useState([]);
-    const [error, setError] = useState(false);
-    const [loading, setLoading] = useState(false);
-
-    const getData = async () => {
-        setLoading(true);
-
-        try {
-            const { data } = await getTodos();
-
-            if (data) {
-                setData(sortedGroups(groupedUsers(data)));
-                setError(false);
-            }
-        } catch (err) {
-            setError(true);
-        } finally {
-            setLoading(false);
-        }
-    };
+    const { getData, loading, error, data } = useFetchUsers();
 
     const handleClick = () => {
         getData();
@@ -45,15 +25,16 @@ function App() {
                     </div>
                 )}
 
-                {!loading && !error && (
-                    <section className="cards">
-                        {data.map((card) => (
-                            <Card key={card.userId} {...card} name={card.userId} />
-                        ))}
-                    </section>
+                {!loading && !error && !!data?.length && (
+                    <>
+                        <section className="cards">
+                            {data.map((card) => (
+                                <Card key={card.userId} {...card} name={card.userId} />
+                            ))}
+                        </section>
+                        <BarChart data={data} />
+                    </>
                 )}
-
-                {!!data?.length && <BarChart data={data} />}
             </main>
         </div>
     );
