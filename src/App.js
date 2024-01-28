@@ -9,19 +9,15 @@ import { useFetchUsers } from './hooks/useFetchUsers';
 function App() {
     const { getData, loading, error, data } = useFetchUsers();
 
-    const handleClick = () => {
-        getData();
-    };
-
     return (
         <div className="App">
             <main>
-                <Button onClick={handleClick} disabled={loading} text={'Загрузить данные'} />
+                <Button onClick={getData} disabled={loading} text="Загрузить данные" />
 
                 {(loading || error) && (
                     <div className="status">
                         {loading && <Preloader />}
-                        {error && <span>Ошибка...</span>}
+                        {error && <p>Ошибка...</p>}
                     </div>
                 )}
 

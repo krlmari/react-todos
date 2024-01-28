@@ -1,8 +1,8 @@
-import axios, { AxiosPromise } from 'axios';
+import axios from 'axios';
 
-const createTodosAxiosInstance = (baseURL: string | undefined) =>
+const createTodosAxiosInstance = (baseURL) =>
     axios.create({
-        baseURL: baseURL,
+        baseURL,
         headers: {
             Accept: 'application/json'
         }
@@ -10,6 +10,4 @@ const createTodosAxiosInstance = (baseURL: string | undefined) =>
 
 const axiosTodosInstance = createTodosAxiosInstance(process.env.REACT_APP_API_URL_TODOS);
 
-const getTodos = (): Promise<AxiosPromise> => axiosTodosInstance.get();
-
-export default getTodos;
+export const getTodos = () => axiosTodosInstance.get();

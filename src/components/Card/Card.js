@@ -1,18 +1,18 @@
 import React from 'react';
 import './Card.css';
 
-function Card(props) {
+function Card({ name, completedCount, uncompletedCount, items }) {
     return (
         <article className="card">
             <div className="cardHeader">
-                <h2>Пользователь {props.name}</h2>
+                <h2>Пользователь {name}</h2>
                 <p className="cardCompleted">
-                    <span>{props.completedTrue}</span> / <span>{props.completedFalse}</span>
+                    <span>{completedCount}</span> / <span>{uncompletedCount}</span>
                 </p>
             </div>
 
             <ul className="cardList">
-                {props.items.map((item, i) => (
+                {items.map((item, i) => (
                     <li key={item.id}>{item.title}</li>
                 ))}
             </ul>

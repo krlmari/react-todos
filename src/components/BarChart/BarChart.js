@@ -6,7 +6,7 @@ import { Bar } from 'react-chartjs-2';
 
 Chart.register(CategoryScale);
 
-export const options = {
+const options = {
     plugins: {
         title: {
             display: true,
@@ -25,18 +25,18 @@ export const options = {
     }
 };
 
-function BarChart(props) {
+function BarChart({ data }) {
     const chartData = {
-        labels: props.data.map((data) => data.userId),
+        labels: data.map((data) => data.userId),
         datasets: [
             {
                 label: 'completed = true',
-                data: props.data.map((data) => data.completedTrue),
+                data: data.map((data) => data.completedCount),
                 backgroundColor: 'green'
             },
             {
                 label: 'completed = false',
-                data: props.data.map((data) => data.completedFalse),
+                data: data.map((data) => data.uncompletedCount),
                 backgroundColor: 'red'
             }
         ]
