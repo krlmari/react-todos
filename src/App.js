@@ -10,29 +10,27 @@ function App() {
     const { getData, loading, error, data } = useFetchUsers();
 
     return (
-        <div className="App">
-            <main>
-                <Button onClick={getData} disabled={loading} text="Загрузить данные" />
+        <main>
+            <Button onClick={getData} disabled={loading} text="Загрузить данные" />
 
-                {(loading || error) && (
-                    <div className="status">
-                        {loading && <Preloader />}
-                        {error && <p>Ошибка...</p>}
-                    </div>
-                )}
+            {(loading || error) && (
+                <div className="status">
+                    {loading && <Preloader />}
+                    {error && <p>Ошибка...</p>}
+                </div>
+            )}
 
-                {!loading && !error && data.length > 0 && (
-                    <>
-                        <section className="cards">
-                            {data.map((card) => (
-                                <Card key={card.userId} {...card} name={card.userId} />
-                            ))}
-                        </section>
-                        <BarChart data={data} />
-                    </>
-                )}
-            </main>
-        </div>
+            {!loading && !error && data.length > 0 && (
+                <>
+                    <section className="cards">
+                        {data.map((card) => (
+                            <Card key={card.userId} {...card} name={card.userId} />
+                        ))}
+                    </section>
+                    <BarChart data={data} />
+                </>
+            )}
+        </main>
     );
 }
 
