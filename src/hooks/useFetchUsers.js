@@ -11,6 +11,7 @@ export const useFetchUsers = () => {
 
     const getData = async () => {
         setLoading(true);
+        error && setError(false);
 
         try {
             await delay();
@@ -18,7 +19,6 @@ export const useFetchUsers = () => {
 
             if (data) {
                 setData(sortUsersGroups(groupUsersWithCount(data)));
-                setError(false);
             }
         } catch (err) {
             setError(true);
