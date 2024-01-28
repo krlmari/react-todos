@@ -21,7 +21,7 @@ function App() {
                     </div>
                 )}
 
-                {!loading && !error && !!data?.length && (
+                {!loading && !error && data.length > 0 && (
                     <>
                         <section className="cards">
                             {data.map((card) => (
