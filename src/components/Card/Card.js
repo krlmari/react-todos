@@ -12,7 +12,7 @@ function Card({ name, completedCount, uncompletedCount, items }) {
             </div>
 
             <ul className="cardList">
-                {items.map((item, i) => (
+                {items.map((item) => (
                     <li key={item.id}>{item.title}</li>
                 ))}
             </ul>
