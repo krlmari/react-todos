@@ -1,8 +1,4 @@
-h2 {
-    font-size: 18px;
-}
-
-.card {
+.user-card {
     position: relative;
     padding: 13px 20px 13px;
     border: 1px solid rgb(226, 222, 222);
@@ -13,11 +9,11 @@ h2 {
     transition: transform linear 0.3s;
 }
 
-.card:hover {
+.user-card:hover {
     transform: scale(1.025);
 }
 
-.cardHeader {
+.user-card__header {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -25,15 +21,19 @@ h2 {
     margin-bottom: 20px;
 }
 
-.cardCompleted span:first-child {
+.user-card__title {
+    font-size: 18px;
+}
+
+.user-card__completed span:first-child {
     color: green;
 }
 
-.cardCompleted span:nth-child(2) {
+.user-card__completed span:nth-child(2) {
     color: red;
 }
 
-.cardList {
+.user-card__list {
     list-style: inside;
     color: gray;
 }
