@@ -1,10 +1,10 @@
 import React from 'react';
-import './UserCards.css';
+import './UsersCards.css';
 import UserCard from '../UserCard/UserCard';
 
-function UserCards({ data }) {
+function UsersCards({ data }) {
     return (
-        <div className="user-cards">
+        <div className="users-cards">
             {data.map((card) => (
                 <UserCard key={card.userId} {...card} name={card.userId} />
             ))}
@@ -12,4 +12,4 @@ function UserCards({ data }) {
     );
 }
 
-export default UserCards;
+export default UsersCards;

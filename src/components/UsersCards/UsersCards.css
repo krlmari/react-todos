@@ -1,0 +1,12 @@
+.users-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+    margin: 40px 0;
+}
+
+@media screen and (max-width: 375px) {
+    .users-cards {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+}

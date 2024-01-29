@@ -1,7 +1,7 @@
 import React from 'react';
 import { useFetchUsersStats } from './hooks/useFetchUsersStats';
 import Button from './components/Button/Button';
-import UserData from './components/UserData/UserData';
+import UsersData from './components/UsersData/UsersData';
 
 function App() {
     const { getData, loading, error, data } = useFetchUsersStats();
@@ -9,7 +9,7 @@ function App() {
     return (
         <main>
             <Button onClick={getData} disabled={loading} text="Загрузить данные" />
-            <UserData data={data} loading={loading} error={error} />
+            <UsersData data={data} loading={loading} error={error} />
         </main>
     );
 }

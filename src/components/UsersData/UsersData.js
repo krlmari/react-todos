@@ -1,14 +1,14 @@
 import React from 'react';
-import './UserData.css';
+import './UsersData.css';
 import Preloader from '../Preloader/Preloader';
-import UserCards from '../UserCards/UserCards';
+import UsersCards from '../UsersCards/UsersCards';
 import UserBarChart from '../UserBarChart/UserBarChart';
 
-function UserData({ data, loading, error }) {
+function UsersData({ data, loading, error }) {
     return (
-        <section className="user-data">
+        <section className="users-data">
             {(loading || error) && (
-                <div className="user-data__status">
+                <div className="users-data__status">
                     {loading && <Preloader />}
                     {error && <p>Ошибка...</p>}
                 </div>
@@ -16,7 +16,7 @@ function UserData({ data, loading, error }) {
 
             {!loading && !error && data.length > 0 && (
                 <>
-                    <UserCards data={data} />
+                    <UsersCards data={data} />
                     <UserBarChart data={data} />
                 </>
             )}
@@ -24,4 +24,4 @@ function UserData({ data, loading, error }) {
     );
 }
 
-export default UserData;
+export default UsersData;
