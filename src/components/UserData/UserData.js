@@ -6,7 +6,7 @@ import UserBarChart from '../UserBarChart/UserBarChart';
 
 function UserData({ data, loading, error }) {
     return (
-        <>
+        <section className="user-data">
             {(loading || error) && (
                 <div className="user-data__status">
                     {loading && <Preloader />}
@@ -20,7 +20,7 @@ function UserData({ data, loading, error }) {
                     <UserBarChart data={data} />
                 </>
             )}
-        </>
+        </section>
     );
 }
 
