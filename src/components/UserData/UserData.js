@@ -1,8 +1,8 @@
 import React from 'react';
 import './UserData.css';
 import Preloader from '../Preloader/Preloader';
-import UserCard from '../UserCard/UserCard';
-import BarChart from '../BarChart/BarChart';
+import UserCards from '../UserCards/UserCards';
+import UserBarChart from '../UserBarChart/UserBarChart';
 
 function UserData({ data, loading, error }) {
     return (
@@ -16,12 +16,8 @@ function UserData({ data, loading, error }) {
 
             {!loading && !error && data.length > 0 && (
                 <>
-                    <section className="user-data__cards">
-                        {data.map((card) => (
-                            <UserCard key={card.userId} {...card} name={card.userId} />
-                        ))}
-                    </section>
-                    <BarChart data={data} />
+                    <UserCards data={data} />
+                    <UserBarChart data={data} />
                 </>
             )}
         </>

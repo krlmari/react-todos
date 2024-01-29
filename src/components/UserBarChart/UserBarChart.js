@@ -1,5 +1,5 @@
 import React from 'react';
-import './BarChart.css';
+import './UserBarChart.css';
 import Chart from 'chart.js/auto';
 import { CategoryScale } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
@@ -25,7 +25,7 @@ const options = {
     }
 };
 
-function BarChart({ data }) {
+function UserBarChart({ data }) {
     const chartData = {
         labels: data.map((data) => data.userId),
         datasets: [
@@ -42,7 +42,7 @@ function BarChart({ data }) {
         ]
     };
 
-    return <Bar data={chartData} options={options} className="chart" />;
+    return <Bar data={chartData} options={options} className="user-bar-chart" />;
 }
 
-export default BarChart;
+export default UserBarChart;
